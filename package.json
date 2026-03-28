@@ -4,11 +4,34 @@
   "description": "MCP server for PriceLabs Customer API - dynamic pricing and revenue management for short-term rentals",
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "pricelabs-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pricelabs",
+    "dynamic-pricing",
+    "short-term-rental",
+    "revenue-management",
+    "airbnb",
+    "vrbo"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
   },
   "engines": {
     "node": ">=18"

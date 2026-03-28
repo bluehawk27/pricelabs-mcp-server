@@ -9,7 +9,27 @@ This server exposes 11 tools that let AI assistants manage listings, retrieve pr
 - **Node.js** >= 18
 - A **PriceLabs** account with API access (Settings > API Details)
 
-## Installation
+## Quick Start (npx)
+
+No installation needed — just configure it in your MCP client:
+
+```json
+{
+  "mcpServers": {
+    "pricelabs": {
+      "command": "npx",
+      "args": ["-y", "pricelabs-mcp-server"],
+      "env": {
+        "PRICELABS_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+Get your API key from your PriceLabs account under **Settings > API Details**.
+
+## Install from Source
 
 ```bash
 git clone <repository-url>
@@ -18,17 +38,7 @@ npm install
 npm run build
 ```
 
-## Configuration
-
-The server requires a PriceLabs API key provided via environment variable:
-
-```bash
-export PRICELABS_API_KEY="your-api-key-here"
-```
-
-### Claude Desktop / Claude Code
-
-Add the server to your MCP configuration (`.mcp.json` or Claude Desktop config):
+Then add to your MCP configuration:
 
 ```json
 {
